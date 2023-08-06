@@ -1,4 +1,4 @@
-# test_hive
+# Simple Meditation
 
 A new Flutter project.
 
