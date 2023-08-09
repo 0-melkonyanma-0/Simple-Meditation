@@ -2,6 +2,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../main.dart';
 import 'navigation_bar.dart';
 
@@ -16,7 +17,6 @@ class _MeditateScreenState extends State<MeditateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
         body: Container(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2.5),
@@ -31,27 +31,88 @@ class _MeditateScreenState extends State<MeditateScreen> {
                   child: SafeArea(
                     child: Column(
                       children: [
-                        // Row(
-                        //   children: [
-                        //     Container(
-                        //       height: 50,
-                        //       width: 320,
-                        //       child: Center(child:
-                        //         Text('greeting')
-                        //       ),
-                        //       decoration: BoxDecoration(
-                        //          color: Colors.white,
-                        //           borderRadius: BorderRadius.circular(10),
-                        //          ),
-                        //     ),
-                        //   ],
-                        // ),
                         Row(
                           children: [
                             Container(
                               height: 50,
                               width: 320,
-                              child: Center(child: Text('test')),
+                              child: Center(child: Text('Meditate')),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              height: 160,
+                              width: 320,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.all(15),
+                                        child:
+                                            Text('PICK A NARRATOR & DURATION'),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.all(15),
+                                          child: Text('Male')),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.all(15),
+                                          child: Text('Female')),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              height: 110,
+                              width: 320,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.all(15),
+                                        child: Text('DOWNLOAD'),
+                                      )
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Padding(
+                                          padding: EdgeInsets.all(15),
+                                          child: Text('Male/Female')),
+                                    ],
+                                  ),
+                                ],
+                              ),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(5),
@@ -73,6 +134,23 @@ class _MeditateScreenState extends State<MeditateScreen> {
             ),
             fit: BoxFit.cover,
           )),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        resizeToAvoidBottomInset: false,
+        floatingActionButton: Container(
+          height: 50,
+          width: 320,
+          margin: const EdgeInsets.all(10),
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                context.pushNamed('audio_player');
+              });
+            },
+            child: const Center(
+              child: Text('Begin'),
+            ),
+          ),
         ),
         bottomNavigationBar: NavBar());
   }

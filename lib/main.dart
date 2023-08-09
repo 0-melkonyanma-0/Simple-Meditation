@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:simple_meditation/screens/audio_player.dart';
 
 import 'package:simple_meditation/screens/downloads.dart';
 import 'package:simple_meditation/screens/meditate.dart';
@@ -39,15 +40,23 @@ class MyApp extends StatelessWidget {
       GoRoute(
           path: "/timer",
           name: 'timer',
-          pageBuilder: ((context, state) => MaterialPage(child: TimerScreen()))),
+          pageBuilder: ((context, state) =>
+              MaterialPage(child: TimerScreen()))),
       GoRoute(
           path: "/meditate",
           name: 'meditate',
-          pageBuilder: ((context, state) => MaterialPage(child: MeditateScreen()))),
+          pageBuilder: ((context, state) =>
+              MaterialPage(child: MeditateScreen()))),
       GoRoute(
           path: "/downloads",
           name: 'downloads',
-          pageBuilder: ((context, state) => MaterialPage(child: DownloadsScreen()))),
+          pageBuilder: ((context, state) =>
+              MaterialPage(child: DownloadsScreen()))),
+      GoRoute(
+          path: "/audio_player",
+          name: 'audio_player',
+          pageBuilder: ((context, state) =>
+              MaterialPage(child: AudioPlayerScreen()))),
     ],
   );
 }

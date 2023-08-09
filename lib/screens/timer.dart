@@ -2,6 +2,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../main.dart';
 import 'navigation_bar.dart';
 
@@ -16,7 +17,6 @@ class _TimerScreenState extends State<TimerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
         body: Container(
           child: BackdropFilter(
             filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2.5),
@@ -36,7 +36,61 @@ class _TimerScreenState extends State<TimerScreen> {
                             Container(
                               height: 50,
                               width: 320,
-                              child: Center(child: Text('timer')),
+                              child: Center(child: Text('Timer')),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 40,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              height: 100,
+                              width: 320,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.all(15),
+                                        child: Text('PICK A DURATION'),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Row(
+                          children: [
+                            Container(
+                              height: 80,
+                              width: 320,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsets.all(15),
+                                        child: Text('DOWNLOAD'),
+                                      )
+                                    ],
+                                  ),
+                                ],
+                              ),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(5),
@@ -58,6 +112,23 @@ class _TimerScreenState extends State<TimerScreen> {
             ),
             fit: BoxFit.cover,
           )),
+        ),
+        resizeToAvoidBottomInset: false,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButton: Container(
+          height: 50,
+          width: 320,
+          margin: const EdgeInsets.all(10),
+          child: ElevatedButton(
+            onPressed: () {
+              setState(() {
+                 context.pushNamed('audio_player');
+              });
+            },
+            child: const Center(
+              child: Text('Begin'),
+            ),
+          ),
         ),
         bottomNavigationBar: NavBar());
   }

@@ -43,6 +43,42 @@ class _HomeScreenState extends State<HomeScreen> {
                               ),
                             ),
                           ],
+                        ),
+                        SizedBox(height: 40),
+                        Row(
+                          children: [
+                            Container(
+                              height: 80,
+                              width: 320,
+                              child: Center(
+                                child: Text('Streak block'),
+                              ),
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(5),
+                              ),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 40),
+                        Row(
+                          children: [
+                            ImageFiltered(
+                              imageFilter:
+                                  ImageFilter.blur(sigmaX: 0.1, sigmaY: 1),
+                              child: Container(
+                                height: 300,
+                                width: 320,
+                                child: Center(
+                                  child: Text('Coming soon'),
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                            ),
+                          ],
                         )
                       ],
                     ),
