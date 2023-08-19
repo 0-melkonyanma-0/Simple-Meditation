@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../main.dart';
-import 'navigation_bar.dart';
 
 class AudioPlayerScreen extends StatefulWidget {
   AudioPlayerScreen({super.key});

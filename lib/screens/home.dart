@@ -12,7 +12,20 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+
+
 class _HomeScreenState extends State<HomeScreen> {
+  late String greetings = greeting();
+  
+  Future<void> _refresh() async {
+
+    await Future.delayed(const Duration(seconds: 1));
+
+    setState(() {
+      greetings = greeting();
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,67 +37,198 @@ class _HomeScreenState extends State<HomeScreen> {
               triggerMode: RefreshIndicatorTriggerMode.onEdge,
               color: Colors.black,
               onRefresh: _refresh,
-              child: ListView(children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  child: SafeArea(
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 50,
-                              width: MediaQuery.of(context).size.width-50,
-                              child: Center(child: Text('greeting')),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ListView(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Center(
+                      child: SafeArea(
+                        child: Flexible(
+                          child: ConstrainedBox(
+                            constraints:
+                                BoxConstraints(maxWidth: 330, minWidth: 300),
+                            child: Center(
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 50,
+                                    child: Center(child: Text(greetings)),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 50,
+                                  ),
+                                  Container(
+                                    height: 150,
+                                    child: Flexible(
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 2.0),
+                                                child: Container(
+                                                  height: 70,
+                                                  width: 70,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.red[400],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [Text('0')],
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Text('Current\n streak'),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 2.0),
+                                                child: Container(
+                                                  height: 70,
+                                                  width: 70,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.red[400],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [Text('0')],
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child:
+                                                    Text('Minutes\nlistened'),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 2.0),
+                                                child: Container(
+                                                  height: 70,
+                                                  width: 70,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.red[400],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [Text('0')],
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child: Text('Longest\n streak'),
+                                              ),
+                                            ],
+                                          ),
+                                          Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.symmetric(
+                                                        horizontal: 2.0),
+                                                child: Container(
+                                                  height: 70,
+                                                  width: 70,
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.red[400],
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            30),
+                                                  ),
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .center,
+                                                    children: [Text('0')],
+                                                  ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(2.0),
+                                                child:
+                                                    Text('Sessions\nListened'),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 50,
+                                  ),
+                                  Container(
+                                    height: 300,
+                                    child:
+                                        Center(child: Text('Coming soon...')),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
+                          ),
                         ),
-                        SizedBox(height: 40),
-                        Row(
-                          children: [
-                            Container(
-                              height: 80,
-                              width: MediaQuery.of(context).size.width-50,
-                              child: Center(
-                                child: Text('Streak block'),
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 40),
-                        Row(
-                          children: [
-                            ImageFiltered(
-                              imageFilter:
-                                  ImageFilter.blur(sigmaX: 0.1, sigmaY: 1),
-                              child: Container(
-                                height: 300,
-                                width: MediaQuery.of(context).size.width-50,
-                                child: Center(
-                                  child: Text('Coming soon'),
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ]),
+                ]),
+              ),
             ),
           ),
           decoration: BoxDecoration(
@@ -97,27 +241,21 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         bottomNavigationBar: NavBar());
   }
-
-  Future<void> _refresh() {
-    return Future.delayed(
-      Duration(seconds: 1),
-    );
-  }
 }
 
-// String greeting() {
-//   int hour = DateTime.now().hour;
+String greeting() {
+  int hour = DateTime.now().hour;
 
-//   if (hour >= 7 && hour <= 12) {
-//     return 'Доброе утро';
-//   }
+  if (hour >= 7 && hour <= 12) {
+    return 'Доброе утро';
+  }
 
-//   if (hour > 12 && hour <= 16) {
-//     return 'Добрый день';
-//   }
+  if (hour > 12 && hour <= 16) {
+    return 'Добрый день';
+  }
 
-//   return 'Добрый вечер';
-// }
+  return 'Добрый вечер';
+}
 
 // Future<bool> checkConnect() async {
 //   try {
