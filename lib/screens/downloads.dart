@@ -35,7 +35,7 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
                         //   children: [
                         //     Container(
                         //       height: 50,
-                        //       width: 320,
+                        //       width: MediaQuery.of(context).size.width-50,
                         //       child: Center(child:
                         //         Text('greeting')
                         //       ),
@@ -50,7 +50,7 @@ class _DownloadsScreenState extends State<DownloadsScreen> {
                           children: [
                             Container(
                               height: 50,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Center(child: Text('downloads')),
                               decoration: BoxDecoration(
                                 color: Colors.white,

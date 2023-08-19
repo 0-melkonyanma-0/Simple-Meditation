@@ -35,7 +35,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                           children: [
                             Container(
                               height: 50,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Center(child: Text('Meditate')),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -51,7 +51,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                           children: [
                             Container(
                               height: 160,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Column(
                                 children: [
                                   Row(
@@ -93,7 +93,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                           children: [
                             Container(
                               height: 110,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Column(
                                 children: [
                                   Row(
@@ -139,7 +139,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
         resizeToAvoidBottomInset: false,
         floatingActionButton: Container(
           height: 50,
-          width: 320,
+          width: MediaQuery.of(context).size.width-50,
           margin: const EdgeInsets.all(10),
           child: ElevatedButton(
             onPressed: () {

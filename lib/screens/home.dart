@@ -35,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Container(
                               height: 50,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Center(child: Text('greeting')),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           children: [
                             Container(
                               height: 80,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Center(
                                 child: Text('Streak block'),
                               ),
@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   ImageFilter.blur(sigmaX: 0.1, sigmaY: 1),
                               child: Container(
                                 height: 300,
-                                width: 320,
+                                width: MediaQuery.of(context).size.width-50,
                                 child: Center(
                                   child: Text('Coming soon'),
                                 ),

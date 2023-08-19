@@ -35,7 +35,7 @@ class _TimerScreenState extends State<TimerScreen> {
                           children: [
                             Container(
                               height: 50,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Center(child: Text('Timer')),
                               decoration: BoxDecoration(
                                 color: Colors.white,
@@ -51,7 +51,7 @@ class _TimerScreenState extends State<TimerScreen> {
                           children: [
                             Container(
                               height: 100,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Column(
                                 children: [
                                   Row(
@@ -78,7 +78,7 @@ class _TimerScreenState extends State<TimerScreen> {
                           children: [
                             Container(
                               height: 80,
-                              width: 320,
+                              width: MediaQuery.of(context).size.width-50,
                               child: Column(
                                 children: [
                                   Row(
@@ -117,7 +117,7 @@ class _TimerScreenState extends State<TimerScreen> {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Container(
           height: 50,
-          width: 320,
+          width: MediaQuery.of(context).size.width-50,
           margin: const EdgeInsets.all(10),
           child: ElevatedButton(
             onPressed: () {
