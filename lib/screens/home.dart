@@ -12,13 +12,28 @@ class HomeScreen extends StatefulWidget {
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
-
-
 class _HomeScreenState extends State<HomeScreen> {
   late String greetings = greeting();
-  
-  Future<void> _refresh() async {
 
+  String greeting() {
+    int hour = DateTime.now().hour;
+
+    if (hour >= 0 && hour < 6) {
+      return 'Добрая ночь';
+    }
+
+    if (hour >= 6 && hour < 12) {
+      return 'Доброе утро';
+    }
+
+    if (hour > 12 && hour < 18) {
+      return 'Добрый день';
+    }
+
+    return 'Добрый вечер';
+  }
+
+  Future<void> _refresh() async {
     await Future.delayed(const Duration(seconds: 1));
 
     setState(() {
@@ -243,19 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 }
 
-String greeting() {
-  int hour = DateTime.now().hour;
 
-  if (hour >= 7 && hour <= 12) {
-    return 'Доброе утро';
-  }
-
-  if (hour > 12 && hour <= 16) {
-    return 'Добрый день';
-  }
-
-  return 'Добрый вечер';
-}
 
 // Future<bool> checkConnect() async {
 //   try {
