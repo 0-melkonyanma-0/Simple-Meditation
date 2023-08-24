@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           child: Column(
                             children: [
                               Container(
-                                height: 50,
+                                height: 30,
                                 child: Center(child: Text(greetings)),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               SizedBox(
-                                height: 50,
+                                height: 30,
                               ),
                               Container(
                                 height: 150,
@@ -201,11 +201,11 @@ class _HomeScreenState extends State<HomeScreen> {
                                 ),
                               ),
                               SizedBox(
-                                height: 50,
+                                height: 30,
                               ),
                               Container(
                                 height: 300,
-                                child: Center(child: Text('Coming soon...')),
+                                child: Center(child: Text('Что-то интересное здесь ждет вас,\n в скором будушем...')),
                                 decoration: BoxDecoration(
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(5),
@@ -222,11 +222,24 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           decoration: BoxDecoration(
-              image: DecorationImage(
-            image: AssetImage(
-              "assets/images/main.png",
-            ),
-            fit: BoxFit.cover,
+              //   image: DecorationImage(
+              // image: AssetImage(
+              //   "assets/images/main.png",
+              // ),
+              // fit: BoxFit.cover,
+              gradient: LinearGradient(
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            stops: [
+              0.3,
+              1.0,
+            ],
+            colors: [
+              Colors.blueGrey,
+              // Colors.blue,
+              // Colors.grey,
+              Colors.white,
+            ],
           )),
         ),
         bottomNavigationBar: NavBar());

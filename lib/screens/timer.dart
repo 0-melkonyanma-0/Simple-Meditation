@@ -14,6 +14,9 @@ class TimerScreen extends StatefulWidget {
 }
 
 class _TimerScreenState extends State<TimerScreen> {
+
+  final double slctButtonWdth = 80;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,94 +27,174 @@ class _TimerScreenState extends State<TimerScreen> {
               triggerMode: RefreshIndicatorTriggerMode.onEdge,
               color: Colors.black,
               onRefresh: _refresh,
-              child: ListView(children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
-                  child: SafeArea(
-                    child: Column(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              height: 50,
-                              width: MediaQuery.of(context).size.width-50,
-                              child: Center(child: Text('Timer')),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ListView(children: [
+                  Center(
+                    child: SafeArea(
+                      child: ConstrainedBox(
+                        constraints: BoxConstraints(
+                          minWidth: MediaQuery.of(context).size.width * 0.70,
+                          maxWidth: MediaQuery.of(context).size.width * 0.75,
+                        ),
+                        child: Center(
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 30,
+                                child: Center(child: Text("Таймер")),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 40,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              height: 100,
-                              width: MediaQuery.of(context).size.width-50,
-                              child: Column(
-                                children: [
-                                  Row(
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Container(
+                                height: 110,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Padding(
-                                        padding: EdgeInsets.all(15),
-                                        child: Text('PICK A DURATION'),
+                                      Row(
+                                        children: [
+                                          Text('Выбрать продолжительность медитации')
+                                        ],
+                                      ),
+                                      SizedBox(height: 10,),
+                                      SingleChildScrollView(
+                                        scrollDirection: Axis.horizontal,
+                                        child: Row(
+                                          children: <Widget>[
+                                            SizedBox(
+                                              width: slctButtonWdth,
+                                              child:  ElevatedButton(
+                                                onPressed: () {},
+                                                child: const Text('3 min'),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            SizedBox(
+                                              width:slctButtonWdth,
+                                              child:  ElevatedButton(
+                                                onPressed: () {},
+                                                child: const Text('5 min'),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            SizedBox(
+                                              width:slctButtonWdth,
+                                              child:  ElevatedButton(
+                                                onPressed: () {},
+                                                child: const Text('8 min'),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            SizedBox(
+                                              width:slctButtonWdth,
+                                              child:  ElevatedButton(
+                                                onPressed: () {},
+                                                child: const Text('12 min'),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            SizedBox(
+                                              width:slctButtonWdth,
+                                              child:  ElevatedButton(
+                                                onPressed: () {},
+                                                child: const Text('15 min'),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
+                              ),
+                              SizedBox(
+                                height: 30,
+                              ),
+                              Container(
+                                height: 110,
+                                child: Padding(
+                                  padding: const EdgeInsets.all(16.0),
+                                  child: Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Text('Скачать')
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text('СКОЛЬКО МИНУТ'),
+                                          SizedBox(
+                                            width: 50,
+                                          ),
+                                          SizedBox(
+                                            child:  ElevatedButton(
+                                              onPressed: () {},
+                                              child: Icon(Icons.download_for_offline),
+                                            ),
+                                          ),
+                                        ],
                                       )
                                     ],
                                   ),
-                                ],
+                                ),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(5),
+                                ),
                               ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Row(
-                          children: [
-                            Container(
-                              height: 80,
-                              width: MediaQuery.of(context).size.width-50,
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsets.all(15),
-                                        child: Text('DOWNLOAD'),
-                                      )
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(5),
-                              ),
-                            ),
-                          ],
-                        )
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              ]),
+                ]),
+              ),
             ),
           ),
           decoration: BoxDecoration(
-              image: DecorationImage(
-            image: AssetImage(
-              "${assetsPath}main.png",
-            ),
-            fit: BoxFit.cover,
-          )),
+            //   image: DecorationImage(
+            // image: AssetImage(
+            //   "assets/images/main.png",
+            // ),
+            // fit: BoxFit.cover,
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                stops: [
+                  0.5,
+                  // 0.4,
+                  // 0.6,
+                  0.9,
+                ],
+                colors: [
+                  Color.fromRGBO(254, 252, 203, 1.0),
+                  Color.fromRGBO(240, 240, 240, 0.5),
+                ],
+              )),
         ),
         resizeToAvoidBottomInset: false,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
@@ -126,7 +209,7 @@ class _TimerScreenState extends State<TimerScreen> {
               });
             },
             child: const Center(
-              child: Text('Begin'),
+              child: Text('Медитировать'),
             ),
           ),
         ),
