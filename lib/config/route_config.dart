@@ -3,6 +3,11 @@ class RouteName {
     'home',
     'meditate',
     'timer',
-    'downloads',
   ];
+}
+
+String assetsPath = "assets/images/";
+
+class RouteConfig {
+  
 }

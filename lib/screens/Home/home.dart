@@ -5,7 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:simple_meditation/config/screen.dart';
 
-import 'navigation_bar.dart';
+import '../Navigation/navigation_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   HomeScreen({super.key});

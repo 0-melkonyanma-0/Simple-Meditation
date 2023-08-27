@@ -1,15 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
-import 'package:simple_meditation/screens/audio_player.dart';
+import 'package:simple_meditation/screens/AudioPlayer/audio_player.dart';
 
-import 'package:simple_meditation/screens/downloads.dart';
-import 'package:simple_meditation/screens/meditate.dart';
-import 'package:simple_meditation/screens/timer.dart';
+import 'package:simple_meditation/screens/Meditate/meditate.dart';
+import 'package:simple_meditation/screens/Timer/timer.dart';
 
-import './screens/home.dart';
-
-String assetsPath = "assets/images/";
+import 'screens/Home/home.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -47,11 +44,6 @@ class MyApp extends StatelessWidget {
           name: 'meditate',
           pageBuilder: ((context, state) =>
               MaterialPage(child: MeditateScreen()))),
-      GoRoute(
-          path: "/downloads",
-          name: 'downloads',
-          pageBuilder: ((context, state) =>
-              MaterialPage(child: DownloadsScreen()))),
       GoRoute(
           path: "/audio_player",
           name: 'audio_player',
