@@ -3,7 +3,8 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../main.dart';
+import 'package:simple_meditation/config/screen.dart';
+
 import 'navigation_bar.dart';
 
 class MeditateScreen extends StatefulWidget {
@@ -15,8 +16,6 @@ class MeditateScreen extends StatefulWidget {
 
 class _MeditateScreenState extends State<MeditateScreen> {
   @override
-
-  final double slctButtonWdth = 80;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,8 +33,8 @@ class _MeditateScreenState extends State<MeditateScreen> {
                     child: SafeArea(
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
-                          minWidth: MediaQuery.of(context).size.width * 0.70,
-                          maxWidth: MediaQuery.of(context).size.width * 0.75,
+                          minWidth: MediaQuery.of(context).size.width * minWidth,
+                          maxWidth: MediaQuery.of(context).size.width * maxWidth,
                         ),
                         child: Center(
                           child: Column(
@@ -74,7 +73,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                         child: Row(
                                           children: <Widget>[
                                            SizedBox(
-                                             width: slctButtonWdth,
+                                             width: buttonWidth,
                                              child:  ElevatedButton(
                                                onPressed: () {},
                                                child: const Text('3 min'),
@@ -84,7 +83,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('5 min'),
@@ -94,7 +93,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('8 min'),
@@ -104,7 +103,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('12 min'),
@@ -114,7 +113,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('15 min'),
@@ -133,7 +132,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                         child: Row(
                                           children: <Widget>[
                                             SizedBox(
-                                              width: slctButtonWdth,
+                                              width: buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('3 min'),
@@ -143,7 +142,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('5 min'),
@@ -153,7 +152,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('8 min'),
@@ -163,7 +162,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('12 min'),
@@ -173,7 +172,7 @@ class _MeditateScreenState extends State<MeditateScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:slctButtonWdth,
+                                              width:buttonWidth,
                                               child:  ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('15 min'),
@@ -193,42 +192,42 @@ class _MeditateScreenState extends State<MeditateScreen> {
                               SizedBox(
                                 height: 30,
                               ),
-                              Container(
-                                height: 110,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        children: [
-                                          Text('Скачать')
-                                        ],
-                                      ),
-                                      SizedBox(
-                                        height: 10,
-                                      ),
-                                      Row(
-                                        children: [
-                                          Text('ПОЛ - СКОЛЬКО МИНУТ'),
-                                          SizedBox(
-                                            width: 50,
-                                          ),
-                                          SizedBox(
-                                            child:  ElevatedButton(
-                                              onPressed: () {},
-                                              child: Icon(Icons.download_for_offline),
-                                            ),
-                                          ),
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                ),
-                                decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                              ),
+                              // Container(
+                              //   height: 110,
+                              //   child: Padding(
+                              //     padding: const EdgeInsets.all(16.0),
+                              //     child: Column(
+                              //       children: [
+                              //         Row(
+                              //           children: [
+                              //             Text('Скачать')
+                              //           ],
+                              //         ),
+                              //         SizedBox(
+                              //           height: 10,
+                              //         ),
+                              //         Row(
+                              //           children: [
+                              //             Text('ПОЛ - СКОЛЬКО МИНУТ'),
+                              //             SizedBox(
+                              //               width: 50,
+                              //             ),
+                              //             SizedBox(
+                              //               child:  ElevatedButton(
+                              //                 onPressed: () {},
+                              //                 child: Icon(Icons.download_for_offline),
+                              //               ),
+                              //             ),
+                              //           ],
+                              //         )
+                              //       ],
+                              //     ),
+                              //   ),
+                              //   decoration: BoxDecoration(
+                              //     color: Colors.white,
+                              //     borderRadius: BorderRadius.circular(5),
+                              //   ),
+                              // ),
                             ],
                           ),
                         ),
@@ -250,8 +249,6 @@ class _MeditateScreenState extends State<MeditateScreen> {
                 end: Alignment.bottomLeft,
                 stops: [
                   0.5,
-                  // 0.4,
-                  // 0.6,
                   0.9,
                 ],
                 colors: [

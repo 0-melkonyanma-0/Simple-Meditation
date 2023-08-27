@@ -5,7 +5,6 @@ import 'package:go_router/go_router.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:simple_meditation/config/meditation_icons_icons.dart';
 import 'package:simple_meditation/config/route_config.dart';
-import 'package:simple_meditation/main.dart';
 
 // ignore: camel_case_types
 class NavBar extends StatefulWidget {
