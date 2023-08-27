@@ -15,6 +15,8 @@ class TimerScreen extends StatefulWidget {
 }
 
 class _TimerScreenState extends State<TimerScreen> {
+  int minutes = 0;
+  var currentColor = Colors.blue;
 
   @override
   Widget build(BuildContext context) {
@@ -33,8 +35,10 @@ class _TimerScreenState extends State<TimerScreen> {
                     child: SafeArea(
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
-                          minWidth: MediaQuery.of(context).size.width * minWidth,
-                          maxWidth: MediaQuery.of(context).size.width * maxWidth,
+                          minWidth:
+                              MediaQuery.of(context).size.width * minWidth,
+                          maxWidth:
+                              MediaQuery.of(context).size.width * maxWidth,
                         ),
                         child: Center(
                           child: Column(
@@ -55,22 +59,36 @@ class _TimerScreenState extends State<TimerScreen> {
                                 child: Padding(
                                   padding: const EdgeInsets.all(16.0),
                                   child: Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       Row(
                                         children: [
-                                          Text('Выбрать продолжительность медитации')
+                                          Text(
+                                              'Выбрать продолжительность медитации')
                                         ],
                                       ),
-                                      SizedBox(height: 10,),
+                                      SizedBox(
+                                        height: 10,
+                                      ),
                                       SingleChildScrollView(
                                         scrollDirection: Axis.horizontal,
                                         child: Row(
                                           children: <Widget>[
                                             SizedBox(
                                               width: buttonWidth,
-                                              child:  ElevatedButton(
-                                                onPressed: () {},
+                                              child: ElevatedButton(
+                                                onPressed: () {
+                                                  setState(() {
+                                                    minutes = 3;
+                                                    currentColor =
+                                                        Colors.amber;
+                                                  });
+                                                },
+                                                style: ElevatedButton.styleFrom(
+                                                  primary:
+                                                      currentColor, // Background color
+                                                ),
                                                 child: const Text('3 min'),
                                               ),
                                             ),
@@ -78,8 +96,8 @@ class _TimerScreenState extends State<TimerScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:buttonWidth,
-                                              child:  ElevatedButton(
+                                              width: buttonWidth,
+                                              child: ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('5 min'),
                                               ),
@@ -88,8 +106,8 @@ class _TimerScreenState extends State<TimerScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:buttonWidth,
-                                              child:  ElevatedButton(
+                                              width: buttonWidth,
+                                              child: ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('8 min'),
                                               ),
@@ -98,8 +116,8 @@ class _TimerScreenState extends State<TimerScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:buttonWidth,
-                                              child:  ElevatedButton(
+                                              width: buttonWidth,
+                                              child: ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('12 min'),
                                               ),
@@ -108,8 +126,8 @@ class _TimerScreenState extends State<TimerScreen> {
                                               width: 10,
                                             ),
                                             SizedBox(
-                                              width:buttonWidth,
-                                              child:  ElevatedButton(
+                                              width: buttonWidth,
+                                              child: ElevatedButton(
                                                 onPressed: () {},
                                                 child: const Text('15 min'),
                                               ),
@@ -128,42 +146,6 @@ class _TimerScreenState extends State<TimerScreen> {
                               SizedBox(
                                 height: 30,
                               ),
-                              // Container(
-                              //   height: 110,
-                              //   child: Padding(
-                              //     padding: const EdgeInsets.all(16.0),
-                              //     child: Column(
-                              //       children: [
-                              //         Row(
-                              //           children: [
-                              //             Text('Скачать')
-                              //           ],
-                              //         ),
-                              //         SizedBox(
-                              //           height: 10,
-                              //         ),
-                              //         Row(
-                              //           children: [
-                              //             Text('СКОЛЬКО МИНУТ'),
-                              //             SizedBox(
-                              //               width: 50,
-                              //             ),
-                              //             SizedBox(
-                              //               child:  ElevatedButton(
-                              //                 onPressed: () {},
-                              //                 child: Icon(Icons.download_for_offline),
-                              //               ),
-                              //             ),
-                              //           ],
-                              //         )
-                              //       ],
-                              //     ),
-                              //   ),
-                              //   decoration: BoxDecoration(
-                              //     color: Colors.white,
-                              //     borderRadius: BorderRadius.circular(5),
-                              //   ),
-                              // ),
                             ],
                           ),
                         ),
@@ -176,28 +158,28 @@ class _TimerScreenState extends State<TimerScreen> {
           ),
           decoration: BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                stops: [
-                  0.5,
-                  0.9,
-                ],
-                colors: [
-                  Color.fromRGBO(254, 252, 203, 1.0),
-                  Color.fromRGBO(240, 240, 240, 0.5),
-                ],
-              )),
+            begin: Alignment.topRight,
+            end: Alignment.bottomLeft,
+            stops: [
+              0.5,
+              0.9,
+            ],
+            colors: [
+              Color.fromRGBO(254, 252, 203, 1.0),
+              Color.fromRGBO(240, 240, 240, 0.5),
+            ],
+          )),
         ),
         resizeToAvoidBottomInset: false,
         floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
         floatingActionButton: Container(
           height: 50,
-          width: MediaQuery.of(context).size.width-50,
+          width: MediaQuery.of(context).size.width - 50,
           margin: const EdgeInsets.all(10),
           child: ElevatedButton(
             onPressed: () {
               setState(() {
-                 context.pushNamed('audio_player');
+                context.pushNamed('audio_player');
               });
             },
             child: const Center(

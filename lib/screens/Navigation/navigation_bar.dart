@@ -48,21 +48,21 @@ class _NavBarState extends State<NavBar> {
                 tabs: [
                   GButton(
                     icon: Icons.home_rounded,
-                    text: 'Home',
+                    text: 'Главная',
                     textColor: Colors.white,
                     iconColor: Colors.white,
                     iconActiveColor: Colors.white,
                   ),
                   GButton(
                     icon: MeditationIcons.meditation,
-                    text: 'Meditate',
+                    text: 'Медитация',
                     textColor: Colors.white,
                     iconColor: Colors.white,
                     iconActiveColor: Colors.white,
                   ),
                   GButton(
                     icon: MeditationIcons.clock,
-                    text: 'Timer',
+                    text: 'Таймер',
                     textColor: Colors.white,
                     iconColor: Colors.white,
                     iconActiveColor: Colors.white,

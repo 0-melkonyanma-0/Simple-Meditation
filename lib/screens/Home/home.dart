@@ -61,8 +61,10 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: SafeArea(
                       child: ConstrainedBox(
                         constraints: BoxConstraints(
-                          minWidth: MediaQuery.of(context).size.width * minWidth,
-                          maxWidth: MediaQuery.of(context).size.width * maxWidth,
+                          minWidth:
+                              MediaQuery.of(context).size.width * minWidth,
+                          maxWidth:
+                              MediaQuery.of(context).size.width * maxWidth,
                         ),
                         child: Column(
                           children: [
@@ -78,148 +80,99 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 30,
                             ),
                             Container(
-                              height: 200,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Row(children: [
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 2.0),
-                                          child: Container(
-                                            height: 60,
-                                            width: 60,
+                              height: 344,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Column(
+                                  children:  <Widget>[
+                                    Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children:[
+                                           Text('Продолжительность практики'),
+                                           Container(
+                                            height: 70,
+                                            width: 70,
                                             decoration: BoxDecoration(
-                                              color: Colors.red[400],
+                                              color: Colors.red,
                                               borderRadius:
-                                                  BorderRadius.circular(30),
+                                                  BorderRadius.circular(
+                                                      25),
                                             ),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [Text('0')],
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(2.0),
-                                          // child: Text('Продолжительность\nпрактики'),
-                                        ),
-                                      ],
-                                    ),
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              horizontal: 2.0),
-                                          child: Container(
-                                            height: 60,
-                                            width: 60,
-                                            decoration: BoxDecoration(
-                                              color: Colors.red[400],
-                                              borderRadius:
-                                                  BorderRadius.circular(30),
-                                            ),
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              children: [Text('0')],
-                                            ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding: const EdgeInsets.all(2.0),
-                                          // child: Text('Минут\nпрослушано'),
-                                        ),
-                                      ],
-                                    ),
-                                  ]),
-                                  Row(
-                                    children: [
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 2.0),
-                                            child: Container(
-                                              height: 60,
-                                              width: 60,
-                                              decoration: BoxDecoration(
-                                                color: Colors.red[400],
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [Text('0')],
-                                              ),
-                                            ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(2.0),
-                                            // child: Text('Max продолжительность\nпрактики'),
+                                            child: Center(child: Text('999 дн.')),
                                           ),
                                         ],
                                       ),
-                                      Column(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                horizontal: 2.0),
-                                            child: Container(
-                                              height: 60,
-                                              width: 60,
-                                              decoration: BoxDecoration(
-                                                color: Colors.red[400],
-                                                borderRadius:
-                                                    BorderRadius.circular(30),
-                                              ),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment.center,
-                                                children: [Text('0')],
-                                              ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children:[
+                                           Text('Max продолжительность практики'),
+                                           Container(
+                                            height: 70,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                              color: Colors.red,
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      25),
                                             ),
-                                          ),
-                                          Padding(
-                                            padding: const EdgeInsets.all(2.0),
-                                            // child: Text('Сеансов\nпрослушано'),
+                                            child: Center(child: Text('999 дн.')),
                                           ),
                                         ],
                                       ),
-                                    ],
-                                  )
-                                ],
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children:[
+                                           Text('Время в медитации'),
+                                           Container(
+                                            height: 70,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                              color: Colors.red,
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      25),
+                                            ),
+                                            child: Center(child: Text('999 мин.')),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(4.0),
+                                      child: Row(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children:[
+                                           Text('Сеансов прослушано'),
+                                           Container(
+                                            height: 70,
+                                            width: 70,
+                                            decoration: BoxDecoration(
+                                              color: Colors.red,
+                                              borderRadius:
+                                                  BorderRadius.circular(
+                                                      25),
+                                            ),
+                                            child: Center(child: Text('999')),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(5),
                               ),
                             ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            // Container(
-                            //   height: 300,
-                            //   child: Center(
-                            //       child: Text(
-                            //           'Что-то интересное здесь ждет вас,\n в скором будушем...')),
-                            //   decoration: BoxDecoration(
-                            //     color: Colors.white,
-                            //     borderRadius: BorderRadius.circular(5),
-                            //   ),
-                            // ),
                           ],
                         ),
                       ),
@@ -230,7 +183,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           decoration: BoxDecoration(
-            gradient: LinearGradient(
+              gradient: LinearGradient(
             begin: Alignment.topRight,
             end: Alignment.bottomLeft,
             stops: [
